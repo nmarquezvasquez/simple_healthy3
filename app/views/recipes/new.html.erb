@@ -1,0 +1,130 @@
+<!-- Validation failure messages -->
+
+<% if @recipe.errors.any? %>
+  <% @recipe.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<!-- Responsive panel example -->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Recipe</h3>
+      </div>
+      <div class="panel-body">
+        <form action="/create_recipe" method="post" class="form-horizontal">
+          <!-- Hidden input for authenticity token to protect from forgery -->
+          <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+          <!-- Label and input for name -->
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">
+              Name
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @recipe.name %>">
+            </div>
+          </div>
+
+          <!-- Label and input for main_ingredient_id -->
+          <div class="form-group">
+            <label for="main_ingredient_id" class="col-sm-2 control-label">
+              Main ingredient
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="main_ingredient_id" name="main_ingredient_id" placeholder="Main ingredient" class="form-control" value="<%= @recipe.main_ingredient_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for meal_id -->
+          <div class="form-group">
+            <label for="meal_id" class="col-sm-2 control-label">
+              Meal
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="meal_id" name="meal_id" placeholder="Meal" class="form-control" value="<%= @recipe.meal_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for ingredients -->
+          <div class="form-group">
+            <label for="ingredients" class="col-sm-2 control-label">
+              Ingredients
+            </label>
+            <div class="col-sm-10">
+              <textarea id="ingredients" name="ingredients" placeholder="Ingredients" class="form-control" rows="3"><%= @recipe.ingredients %></textarea>
+            </div>
+          </div>
+
+          <!-- Label and input for directions -->
+          <div class="form-group">
+            <label for="directions" class="col-sm-2 control-label">
+              Directions
+            </label>
+            <div class="col-sm-10">
+              <textarea id="directions" name="directions" placeholder="Directions" class="form-control" rows="3"><%= @recipe.directions %></textarea>
+            </div>
+          </div>
+
+          <!-- Label and input for image -->
+          <div class="form-group">
+            <label for="image" class="col-sm-2 control-label">
+              Image
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @recipe.image %>">
+            </div>
+          </div>
+
+          <!-- Label and input for meal -->
+          <div class="form-group">
+            <label for="meal" class="col-sm-2 control-label">
+              Meal
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="meal" name="meal" placeholder="Meal" class="form-control" value="<%= @recipe.meal %>">
+            </div>
+          </div>
+
+          <!-- Label and input for main_ingredient -->
+          <div class="form-group">
+            <label for="main_ingredient" class="col-sm-2 control-label">
+              Main ingredient
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="main_ingredient" name="main_ingredient" placeholder="Main ingredient" class="form-control" value="<%= @recipe.main_ingredient %>">
+            </div>
+          </div>
+
+          <!-- Label and input for calories -->
+          <div class="form-group">
+            <label for="calories" class="col-sm-2 control-label">
+              Calories
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="calories" name="calories" placeholder="Calories" class="form-control" value="<%= @recipe.calories %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button class="btn btn-success">
+                Create Recipe
+              </button>
+              or
+              <a href="/recipes">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->
