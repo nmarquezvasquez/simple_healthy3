@@ -39,8 +39,6 @@
             </label>
             <div class="col-sm-10">
               <%= select_tag(:main_ingredient_id, options_from_collection_for_select(MainIngredient.all, :id, :name, @recipe.main_ingredient_id), :class => "form-control")  %>
-
-
             </div>
           </div>
 
@@ -81,26 +79,6 @@
             </label>
             <div class="col-sm-10">
               <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @recipe.image %>">
-            </div>
-          </div>
-
-          <!-- Label and input for meal -->
-          <div class="form-group">
-            <label for="meal" class="col-sm-2 control-label">
-              Meal
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="meal" name="meal" placeholder="Meal" class="form-control" value="<%= @recipe.meal %>">
-            </div>
-          </div>
-
-          <!-- Label and input for main_ingredient -->
-          <div class="form-group">
-            <label for="main_ingredient" class="col-sm-2 control-label">
-              Main ingredient
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="main_ingredient" name="main_ingredient" placeholder="Main ingredient" class="form-control" value="<%= @recipe.main_ingredient %>">
             </div>
           </div>
 

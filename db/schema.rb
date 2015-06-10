@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610011004) do
+ActiveRecord::Schema.define(version: 20150610013727) do
 
   create_table "favorites", force: :cascade do |t|
     t.text     "notes"
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20150610011004) do
     t.text     "directions"
     t.string   "image"
     t.string   "meal"
-    t.string   "main_ingredient"
     t.integer  "calories"
     t.datetime "created_at"
     t.datetime "updated_at"
