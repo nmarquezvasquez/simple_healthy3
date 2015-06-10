@@ -4,20 +4,14 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Recipe #<%= @recipe.id %></h3>
+        <h3 class="panel-title"><%= @recipe.name %></h3>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
-              <dt>Name</dt>
-              <dd><%= @recipe.name %></dd>
-
-              <dt>Main ingredient</dt>
-              <dd><%= @recipe.main_ingredient_id %></dd>
-
-              <dt>Meal</dt>
-              <dd><%= @recipe.meal_id %></dd>
+              <dt>Image</dt>
+              <dd><img src="<%= @recipe.image %>" width="400"></dd>
 
               <dt>Ingredients</dt>
               <dd><%= @recipe.ingredients %></dd>
@@ -25,14 +19,11 @@
               <dt>Directions</dt>
               <dd><%= @recipe.directions %></dd>
 
-              <dt>Image</dt>
-              <dd><%= @recipe.image %></dd>
+              <dt>Main ingredient</dt>
+              <dd><%= @recipe.main_ingredient_id %></dd>
 
               <dt>Meal</dt>
-              <dd><%= @recipe.meal %></dd>
-
-              <dt>Main ingredient</dt>
-              <dd><%= @recipe.main_ingredient %></dd>
+              <dd><%= @recipe.meal_id %></dd>
 
               <dt>Calories</dt>
               <dd><%= @recipe.calories %></dd>

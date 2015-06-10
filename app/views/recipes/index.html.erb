@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>
+  <h1> <i class="fa fa-list"></i>
     Recipes
     <a href="/recipes/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
   </h1>
@@ -20,36 +20,16 @@
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Recipe #<%= recipe.id %></h3>
+        <h3 class="panel-title"><%= recipe.name %></h3>
       </div>
       <div class="panel-body">
         <dl>
-          <dt>Name</dt>
-          <dd><%= recipe.name %></dd>
-
+          <dd><img src="<%= recipe.image %>" width="230"></dd>
           <dt>Main ingredient</dt>
           <dd><%= recipe.main_ingredient_id %></dd>
 
           <dt>Meal</dt>
           <dd><%= recipe.meal_id %></dd>
-
-          <dt>Ingredients</dt>
-          <dd><%= recipe.ingredients %></dd>
-
-          <dt>Directions</dt>
-          <dd><%= recipe.directions %></dd>
-
-          <dt>Image</dt>
-          <dd><%= recipe.image %></dd>
-
-          <dt>Meal</dt>
-          <dd><%= recipe.meal %></dd>
-
-          <dt>Main ingredient</dt>
-          <dd><%= recipe.main_ingredient %></dd>
-
-          <dt>Calories</dt>
-          <dd><%= recipe.calories %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">
