@@ -12,13 +12,13 @@
             <dl class="dl-horizontal">
               <dt>Name</dt>
               <dd><%= @meal.name %><dd>
+
               <dt>Recipes</dt>
-                    <dd>
-                      <% @meal.recipes.each do |recipe| %>
-                    <li class>
+              <dd><% @meal.recipes.each do |recipe| %>
+                <li class>
                       <a href="/recipes/<%= recipe.id %>"><%= recipe.name %></li>
-                      <% end %>
-                    </ul><dd>
+                      <% end %></a></dd>
+
             </dl>
             <div class="btn-group btn-group-justified">
               <a href="/meals" class="btn btn-primary">

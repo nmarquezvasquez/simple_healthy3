@@ -26,10 +26,10 @@
         <dl>
           <dd><img src="<%= recipe.image %>" width="230"></dd>
           <dt>Main ingredient</dt>
-          <dd><%= recipe.main_ingredient_id %></dd>
+          <dd><%= recipe.main_ingredient.name %></dd>
 
           <dt>Meal</dt>
-          <dd><%= recipe.meal_id %></dd>
+          <dd><%= recipe.meal.name %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">
