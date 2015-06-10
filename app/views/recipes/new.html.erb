@@ -35,10 +35,12 @@
           <!-- Label and input for main_ingredient_id -->
           <div class="form-group">
             <label for="main_ingredient_id" class="col-sm-2 control-label">
-              Main ingredient
+              Main Ingredient
             </label>
             <div class="col-sm-10">
-              <input type="text" id="main_ingredient_id" name="main_ingredient_id" placeholder="Main ingredient" class="form-control" value="<%= @recipe.main_ingredient_id %>">
+              <%= select_tag(:main_ingredient_id, options_from_collection_for_select(MainIngredient.all, :id, :name, @recipe.main_ingredient_id), :class => "form-control")  %>
+
+
             </div>
           </div>
 
@@ -48,7 +50,7 @@
               Meal
             </label>
             <div class="col-sm-10">
-              <input type="text" id="meal_id" name="meal_id" placeholder="Meal" class="form-control" value="<%= @recipe.meal_id %>">
+              <%= select_tag(:meal_id, options_from_collection_for_select(Meal.all, :id, :name, @recipe.meal_id), :class => "form-control") %>
             </div>
           </div>
 
