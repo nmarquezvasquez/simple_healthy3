@@ -16,6 +16,13 @@
               <dt>Notes</dt>
               <dd><%= @main_ingredient.notes %></dd>
 
+              <dt>Recipes</dt>
+              <dd>
+               <% @main_ingredient.recipes.each do |recipe| %>
+              <li class>
+                      <a href="/recipes/<%= recipe.id %>"><%= recipe.name %></li>
+                      <% end %>
+                    </ul>
             </dl>
             <div class="btn-group btn-group-justified">
               <a href="/main_ingredients" class="btn btn-primary">
