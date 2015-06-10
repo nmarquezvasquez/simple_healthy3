@@ -10,22 +10,32 @@
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
+
               <dt>Image</dt>
               <dd><img src="<%= @recipe.image %>" width="400"></dd>
-
+              <dt>&nbsp;</dt>
               <dt>Ingredients</dt>
+              <td>&nbsp;</td>
               <dd><%= @recipe.ingredients %></dd>
 
+              <dt>&nbsp;</dt>
               <dt>Directions</dt>
+              <td>&nbsp;</td>
               <dd><%= @recipe.directions %></dd>
 
+              <dt>&nbsp;</dt>
               <dt>Main ingredient</dt>
+              <td>&nbsp;</td>
               <dd><%= @recipe.main_ingredient.name %></dd>
 
+              <dt>&nbsp;</dt>
               <dt>Meal</dt>
+              <td>&nbsp;</td>
               <dd><%= @recipe.meal.name %></dd>
 
+              <dt>&nbsp;</dt>
               <dt>Calories</dt>
+              <td>&nbsp;</td>
               <dd><%= @recipe.calories %></dd>
 
             </dl>
