@@ -17,7 +17,7 @@
               <dd><%= @favorite.meal.name %></dd>
 
               <dt>Recipe</dt>
-              <dd><%= @favorite.recipe.name %></dd>
+              <dd><a href="/recipes/<%= @favorite.recipe.id %>"><%= @favorite.recipe.name %></a></dd>
 
               <dt>Notes</dt>
               <dd><%= @favorite.notes %></dd>

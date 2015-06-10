@@ -1,4 +1,14 @@
 class FavoritesController < ApplicationController
+
+  before_action :check_if_owner, only: [:edit, :update, :destroy]
+
+  def check_if_owner
+    favorite = Favorite.find(params[:id])
+    if favorite.user_id != current_user.id
+      redirect_to "/favorites", notice: "Nope! That's not yours"
+    end
+  end
+
   def index
     @favorites = Favorite.all
   end
@@ -13,7 +23,7 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.new
-    @favorite.user_id = params[:user_id]
+    @favorite.user_id = current_user.id
     @favorite.meal_id = params[:meal_id]
     @favorite.recipe_id = params[:recipe_id]
     @favorite.notes = params[:notes]

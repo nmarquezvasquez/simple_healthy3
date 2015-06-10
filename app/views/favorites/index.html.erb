@@ -17,6 +17,8 @@
 
 <div class="row isotope-container">
 <% @favorites.each do |favorite| %>
+<%if current_user.id == favorite.user_id%>
+
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -33,8 +35,6 @@
           <dt>Notes</dt>
           <dd><%= favorite.notes %></dd>
           <td>&nbsp;</td>
-          <dt>User</dt>
-          <dd><%= favorite.user.email %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">
@@ -53,6 +53,7 @@
       </div>
     </div>
   </div>
+  <% end %>
 <% end %>
 </div>
 

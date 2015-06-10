@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>SimpleHealthy3</title>
+  <title>Simple and Healthy</title>
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/journal/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -48,14 +48,15 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <% if 1 > 2 %>
-            <li><a href="/users/edit">Oscar the Grouch</a></li>
-            <li><a href="/users/sign_out" data-method="delete" rel="nofollow">Sign out</a></li>
+          <% if current_user.present? %>
+            <li><a href="/users/edit"><%= current_user.email %></a></li>
+            <li><a href="/users/sign_out" data-method="delete">Sign out</a></li>
           <% else %>
-             <li><a href="/users/sign_up"><i class="fa fa-user-plus"></i> Sign up </a></li>
-            <li><a href="/users/sign_in"><i class="fa fa-sign-in"></i> Sign in </a></li>
-          <% end %>
+            <li><a href="/users/sign_in">Sign in</a></li>
+            <li><a href="/users/sign_up">Sign up</a></li>
+          <% end -%>
         </ul>
+
       </div><!-- /.navbar-collapse -->
     </div>
   </nav>
